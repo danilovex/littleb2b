@@ -33,9 +33,9 @@ public class EnviarMail extends HttpServlet {
         mj.setSmtpPortMail("587");
         mj.setSmtpAuth("true");
         mj.setSmtpStarttls("true");
-        mj.setUserMail("danilovex@gmail.com");
-        mj.setFromNameMail("Danilo");
-        mj.setPassMail("pao+78hje");
+        mj.setUserMail("littleb2b@gmail.com");
+        mj.setFromNameMail("Little B2B");
+        mj.setPassMail("concursovpsa2012");
         mj.setCharsetMail("ISO-8859-1");
         mj.setSubjectMail("JavaMail");
         mj.setBodyMail("<html><body>EU</body></html>");
