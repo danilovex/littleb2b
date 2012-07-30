@@ -1,0 +1,29 @@
+[
+    {
+        "id": 134,
+        "descricao": "34EGERG - UN",
+        "preco": 10,
+        "estoqueMaximo": 20,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 69,
+        "descricao": "AAAAAAAAAAAA - m³",
+        "preco": 1000,
+        "estoqueMaximo": null,
+        "estoqueMinimo": null,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 8328,
+        "descricao": "ACETONA - UN",
+        "preco": 1.2,
+        "estoqueMaximo": 20,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    }
+]

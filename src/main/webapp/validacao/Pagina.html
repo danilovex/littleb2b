@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>the title</title>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+   <script type="text/javascript" language="javascript">
+   
+   
+	var logIt = function(data) {
+	    //print last tweet text
+	    window.console && console.log(data[0].text);
+	}
+	 
+	var scriptTag = document.createElement('SCRIPT');
+	scriptTag.src = "https://www.vpsa.com.br/vpsa/rest/externo/showroom/terceiros?&callback=logIt";
+	 
+	document.getElementsByTagName('HEAD')[0].appendChild(scriptTag);   
+   
+   $(document).ready(function() {
+      
+	  login = "436.142.026-23";
+/*           $.getJSON("https://www.vpsa.com.br/vpsa/rest/externo/showroom/terceiros", function(result) {
+		  //$.getJSON('test.json', function(result) {
+             //$('#stage').html('<p> Id: ' + jd.id + '</p>');
+
+			 
+			 $.each(result, function(i, field){
+				
+				$('#stage').append('<p> Id: ' + field.identificacao + ' - '+ i +'</p>');
+				
+				//if (field.identificacao == login){
+					//$('#stage').html('OK');
+						//		}
+								
+			});
+			 
+			 
+          }); */
+		  
+		  
+		$.ajax({
+		  url: 'https://www.vpsa.com.br/vpsa/rest/externo/showroom/terceiros',
+		  //url: 'test.json',
+		  dataType: 'jsonp',
+		  crossDomain: true,
+		  jsonp: false,
+		  success: function(result) {
+			 $.each(result, function(i, field){
+				
+				$('#stage').append('<p> Id: ' + field.identificacao + ' - '+ i +'</p>');
+				
+				//if (field.identificacao == login){
+					//$('#stage').html('OK');
+						//		}
+								
+			});
+		  }
+		});		  
+		
+		
+
+		  
+      
+   });
+   </script>
+</head>
+<body>
+   <div id="stage" >
+          FAIL
+   </div>
+</body>
+</html>

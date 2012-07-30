@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>the title</title>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+   <script type="text/javascript" language="javascript">
+
+var logIt = function(data) {
+		
+	$.each(data, function(i, field){
+		$('#stage').append('<p> Id: ' + field.identificacao + ' - '+ i +'</p>');
+	});
+		
+	}
+	 
+	var scriptTag = document.createElement('SCRIPT');
+	scriptTag.src = "https://www.vpsa.com.br/vpsa/rest/externo/showroom/terceiros?count=5&callback=logIt";
+
+	document.getElementsByTagName('HEAD')[0].appendChild(scriptTag);
+	 	
+   </script>
+</head>
+<body>
+   <div id="stage" >
+ 
+   </div>
+</body>
+</html>
