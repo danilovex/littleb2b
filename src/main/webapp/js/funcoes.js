@@ -1,4 +1,31 @@
 // JavaScript Document
+function replaceAll(str, de, para){
+    var pos = str.indexOf(de);
+    while (pos > -1){
+		str = str.replace(de, para);
+		pos = str.indexOf(de);
+	}
+    return (str);
+}
+function getNumPedido(){ 
+   	momentoAtual = new Date(); 
+   	hora = momentoAtual.getHours(); 
+   	minuto = momentoAtual.getMinutes(); 
+   	segundo = momentoAtual.getSeconds(); 
+
+   	empresa = getCookie('B2b');
+   	empresa = empresa.split("|");
+   	
+   	NumPedido = empresa + '-' + hora + '' + minuto + '' + segundo; 
+   	
+   	NumPedido = replaceAll(NumPedido,",","");
+   	NumPedido = replaceAll(NumPedido,".","");
+   	NumPedido = replaceAll(NumPedido,"/","");
+   	NumPedido = NumPedido.replace("-","");
+   	
+   	return NumPedido;
+   	
+}
 function ListarProdutos(){
 $.getJSON('../validacao/produtos.json', function(result) {
 		cont = 8;
@@ -36,11 +63,23 @@ function AddItemPedido(id,qtd){
 		 $.each(result, function(i, field){						 							
 		 if (field.id == id){
 			 $("#listaProdutos tbody").append(AddProdutoTablePedido(field.id, field.descricao, field.preco,qtd));
-//			 valor = (field.preco*qtd);
-//			 if(getCookie("ValorPedido") != "" && getCookie("ValorPedido") != null)
-//				 valor = parseFloat(getCookie("ValorPedido")) + parseFloat(valor);
-//
-//				 gravaCookie('ValorPedido', valor, 8);
+
+			 //adiciona itens para fechar pediddo
+			 Items = $("#TodosItems").attr("value");			 
+			 
+			 if (backgroundItem = "")
+				 backgroundItem = "style='background-color:#E2E2E2;'";
+			 else
+				 backgroundItem = "";
+			 
+			 Items = Items + "<tr "+backgroundItem+">";
+			 Items = Items + "<td align='center'>"+field.id+"</td>";
+			 Items = Items + "<td>"+field.descricao+"</td>";			 
+			 Items = Items + "<td align='right'>"+qtd+"</td>";
+			 Items = Items + "<td align='right'>"+field.preco+"</td>";
+			 Items = Items + "<td align='right'>"+float2moeda(field.preco*qtd)+"</td>";			 
+			 Items = Items + "</tr>";
+			 $("#TodosItems").attr("value",Items);
 			 
 			 return false;
 		 }			
@@ -56,7 +95,7 @@ function ExibirImgItem(id){
 	pesquisar = pesquisar.replace(/ /g,"_");
 	
 	$.ajax({
-		  url: 'http://localhost:8080/littleb2b/ImagemGoogle',
+		  url: '../ImagemGoogle',
 		  data:'busca='+pesquisar+'&tam=medium',
 		  async:false,
 		  success: function(data) {
@@ -106,12 +145,11 @@ function ListarPedidoItem(){
 	if (getCookie('Carrinho') != "" && getCookie('Carrinho') != 0 && getCookie('Carrinho') != null){
 		var result = getCookie('Carrinho');
 		dadosped = result.split("|");		
-//		gravaCookie('ValorPedido',"0", 8);
+		$("#TodosItems").attr("value","");
 		for(var i=0;i<dadosped.length;i++){
 			pedItem = dadosped[i].split("#");
 			AddItemPedido(pedItem[0],pedItem[1]);		
 		}	
-		//$("#listaProdutos tfoot").append("<tr class='Item'><td colspan='4'><div class='precotd'><b>Vr. Total</b></div></td><td><div class='precotd'><b id='VrTotalPedido'></b></div></td><td> </td></tr>");
 		
 	}else{
 		//carrinho vazio

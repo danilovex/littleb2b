@@ -8,14 +8,54 @@
 <!-- <script src="../js/jquery-1.4.4.min.js" type="text/javascript"></script> -->
 <script src="../js/funcoes.js" type="text/javascript"></script>
 <script type="text/javascript" language="javascript">
+function EnviarPedido(){
+	data = "enviar=pedido";
+	
+	if ($("#responsavel").attr("value"))
+		data = data + "&responsavel="+$("#responsavel").attr("value");
 
+	if ($("#telefone").attr("value"))
+		data = data + "&telefone="+$("#telefone").attr("value");
+	
+	if ($("#formapagamento").attr("value"))
+		data = data + "&formapagamento="+$("#formapagamento").attr("value");	
+	
+
+	data = data + "&empresa="+$("#i-empresa").html();		
+
+	data = data + "&cnpj="+$("#i-cnpj").html();		
+
+	data = data + "&endereco="+$("#i-endereco").html();
+	
+	data = data + "&cidadeuf="+$("#i-cidadeuf").html();		
+
+	data = data + "&email="+$("#email").attr("value");		
+
+	data = data + "&TodosItems="+$("#TodosItems").attr("value");
+	
+	data = data + "&VrTotal="+$("#VrTotalPedido").html();
+	
+	tempNumPedido = getNumPedido();
+	
+	gravaCookie("NroUltimoPed", tempNumPedido, 1);
+	
+	data = data + "&NumPedido="+ tempNumPedido;
+	
+	$.ajax({
+		  type: 'POST',
+		  url: "../EnviarMail",
+		  data: data,
+		  async:false,
+		  success: function(resp){
+			  
+			  
+		  }
+		});
+	
+}
 $(document).ready(function(){
 
 validaPagina();
-
-$(".btnPesquisar").click(function(){	
-
-});
   
 //busca dados empresa
 var result = getCookie('B2b');
@@ -27,10 +67,10 @@ if (result != null && result != 0 && result != ""){
 $.getJSON('../validacao/test.json', function(result) {
 	 $.each(result, function(i, field){
 		if (field.identificacao == cnpj && field.identificacao != '' && field.identificacao != null){
-			$("#empresa").attr("value",field.nome);
-			$("#cnpj").attr("value",field.identificacao);
-			$("#endereco").attr("value",field.endereco.logradouro+", "+field.endereco.bairro);
-			$("#cidadeuf").attr("value",field.endereco.cidade+"/"+field.endereco.siglaEstado);
+			$("#i-empresa").html(field.nome);
+			$("#i-cnpj").html(field.identificacao);
+			$("#i-endereco").html(field.endereco.logradouro+", "+field.endereco.bairro);
+			$("#i-cidadeuf").html(field.endereco.cidade+"/"+field.endereco.siglaEstado);
 			$("#email").attr("value",field.email);
 			
 			$(".maisinfo").hide();
@@ -46,7 +86,47 @@ $(".btnInfo").click(function(){
 		$(".maisinfo").show("slow");
 		$(".btnInfo").remove();
 });
-	  
+
+$('#g-resposanvel').removeClass('error');
+$(".help-inline").hide();
+
+$("#EnviarPedido").click(function(){
+	
+	$('.control-group').removeClass('error');
+	$(".help-inline").hide();
+	
+	valid = "true";
+
+	if (!$("#responsavel").attr("value")){
+		$("#g-resposanvel").addClass('error');
+		valid = "false";
+	}	
+	if (!$("#telefone").attr("value")){
+		$("#g-telefone").addClass('error');
+		valid = "false";
+
+	}	
+	if (!$("#email").attr("value")){
+		$("#g-email").addClass('error');
+		valid = "false";
+
+	}		
+	if (!$("#formapagamento").attr("value")){
+		$("#g-formapagamento").addClass('error');
+		valid = "false";
+
+	}		
+	
+	if(valid == "true"){
+		EnviarPedido();
+		window.location = "../sucesso/";
+	}
+
+	
+	
+});
+
+
 });
 </script>
     <style type="text/css">
@@ -81,7 +161,11 @@ $(".btnInfo").click(function(){
 	background-color:#fff;
 	text-align:center;
 }
-	  
+.DadosEmpresa{
+	float:left;
+	width:500px;
+
+}
     </style>
     <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
@@ -93,7 +177,7 @@ $(".btnInfo").click(function(){
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            <span class="icon-bar">teste</span>            
+            <span class="icon-bar"></span>            
           </a>
           <a class="brand" href="#">Little B2B</a>
           <div class="nav-collapse">
@@ -109,68 +193,55 @@ $(".btnInfo").click(function(){
     <div class="container">
     
 <form class="form-horizontal">
-  <fieldset>
+  <fcieldset>
     <legend>Dados do Comprador</legend>
-
-    <div class="control-group">
+<div class="DadosEmpresa">
+    <div class="control-group error" id="g-resposanvel">
       <label class="control-label" for="label_responsavel">Responsável</label>
       <div class="controls">
         <input type="text" class="input-xlarge" id="responsavel">
       </div>
      </div>
-    <div class="control-group">
+    <div class="control-group" id="g-telefone">
       <label class="control-label" for="label_telefone">Telefone</label>
       <div class="controls">
-        <input type="text" class="input-xlarge" id="telefone">
+        <input type="text" class="input-xlarge" id="telefone">        
       </div>
      </div>
-     <div class="control-group">
-      <label class="control-label" for="label_formapagamento">Forma de Pagamento</label>
-      <div class="controls">
-        <input type="text" class="input-xlarge" id="formapagamento" value="FATURADO 30 dias">
-        <br/><button type="button" class="btn btn-mini btnInfo">Mais informações</button>
-      </div>
-     </div>
-
-
-    <div class="control-group maisinfo">
-      <label class="control-label" for="label_empresa">Empresa</label>
-      <div class="controls">
-        <input type="text" class="input-xlarge" id="empresa">
-      </div>
-    </div>
-    <div class="control-group maisinfo">
+    <div class="control-group" id="g-email">
       <label class="control-label" for="label_email">Email</label>
       <div class="controls">
         <input type="text" class="input-xlarge" id="email">
       </div>
-     </div>     
-     <div class="control-group maisinfo">
-      <label class="control-label" for="label_cnpj">CNPJ</label>
+     </div>          
+     <div class="control-group" id="g-formapagamento">
+      <label class="control-label" for="label_formapagamento">Forma de Pagamento</label>      
       <div class="controls">
-        <input type="text" class="input-xlarge" id="cnpj">
+        <input type="text" class="input-xlarge" id="formapagamento" value="FATURADO 30 dias">
       </div>
      </div>
-     <div class="control-group maisinfo">
-      <label class="control-label" for="label_endereco">Endereço</label>
-      <div class="controls">
-        <input type="text" class="input-xlarge" id="endereco">
-      </div>
-     </div>     
-     <div class="control-group maisinfo">
-      <label class="control-label" for="label_cidadeuf">Cidade/UF</label>
-      <div class="controls">
-        <input type="text" class="input-xlarge" id="cidadeuf">
-      </div>
-     </div>     
-     <div class="control-group maisinfo">
+     <div class="control-group">
       <label class="control-label" for="label_observacao">Observação</label>
       <div class="controls">
         <textarea class="input-xlarge" id="textarea" rows="3"></textarea>
       </div>
      </div>     
+     
+     
+</div>
+<div class="DadosEmpresa">
+	<div class="alert alert-info">
+	  <b>Dados da Empresa:</b>
+	  <label id="i-empresa"></label>
+	  <label id="i-cnpj"></label>
+	  <label id="i-endereco"></label>
+	  <label id="i-cidadeuf"></label>
+	</div>
+</div>     
+<br clear="all" />
 
   </fieldset>
+  <input type="hidden" name="TodosItems" id="TodosItems" />
 </form>    
 
 <legend>Itens do Carrinho</legend>
@@ -191,13 +262,14 @@ $(".btnInfo").click(function(){
     <tbody>
     </tbody>
 </table>
-<div class="precotd"><a class="btn btn-primary" href="#"><i class="icon-ok icon-white"></i> Concluir Pedido</a></div>
+<div class="precotd"><a class="btn btn-primary" href="javascript:void(0);" id="EnviarPedido"><i class="icon-ok icon-white"></i> Concluir Pedido</a></div>
 <br /><br />
     </div> <!-- /container -->   
     
 <div id="underlay" onclick="document.getElementById('underlay').style.display='none'; document.getElementById('lightbox').style.display='none';">
 </div>
 <div id="lightbox">
+<br><br>
 	<img src="" id="imgItem">
 </div>    
   </body>

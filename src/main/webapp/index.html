@@ -60,10 +60,13 @@ $(document).ready(function(){
     <div class="container">
 <div align="center"><br /><img src="logo_littleb2pb.png"><br /><br />
 
-
-<div>
-	<span>CNPJ:</span><input type="text" id="identificacao" value="" maxlength="18" onkeyup="FormataCnpj(this,event);">
+<div style="width:400px;">
+<form class="well form-inline" >
+	
+	<label>Login: </label><input type="text" placeholder="Digite CNPJ" id="identificacao" value="" maxlength="18" onkeyup="FormataCnpj(this,event);">
 	<input type="button" class="btn btn-primary" id="btnEntrar" value="Entrar">
+	
+</form>
 </div>
    <div id="error" class="alert alert-error">
    
