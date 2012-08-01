@@ -1,0 +1,264 @@
+[
+    {
+        "id": 134,
+        "descricao": "6 W RMS MUSIC BOX MULTILASER - UN",
+        "preco": 75,
+        "estoqueMaximo": 20,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 69,
+        "descricao": "300VASMS110V/110VREVOLUTIONSPEEDPRETO - UN",
+        "preco": 42.5,
+        "estoqueMaximo": null,
+        "estoqueMinimo": null,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 8328,
+        "descricao": "300VAENERMAX110V/110VEXXA3PRETO - UN",
+        "preco": 37.5,
+        "estoqueMaximo": 20,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 11502,
+        "descricao": "ACIONADORSIRENE(SINAL)P/02SIRENES-110/220V - UN",
+        "preco": 425,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 34,
+        "descricao": "ACR�LICOSTANDARDVPSA - UN",
+        "preco": 85,
+        "estoqueMaximo": 10000,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": -10,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 115,
+        "descricao": "CDDLEITORBLU-RAYDVDRWCDRWUSBSAMSUNGSE-406AB/BREXTER - UN",
+        "preco": 237.5,
+        "estoqueMaximo": 1000,
+        "estoqueMinimo": 1,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 100,
+        "descricao": "CDDGRAVADORDVDSATASAMSUNGPRETO - UN",
+        "preco": 66.5,
+        "estoqueMaximo": 1000,
+        "estoqueMinimo": 100,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 8318,
+        "descricao": "COOLERCHIPSETNORTHBRIDGEFROSTMYMAX - UN",
+        "preco": 19.5,
+        "estoqueMaximo": 300,
+        "estoqueMinimo": 100,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 10,
+        "descricao": "COOLERMEMORIASDDR/DDR/DDR2/DDR3HEATPIPEMEMO4MYMAX - UN",
+        "preco": 47.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 1,
+        "quantidadeEmEstoque": 24,
+        "valorTotalEmEstoque": 131.76
+    },
+    {
+        "id": 8337,
+        "descricao": "ALTOFALANTE SWOOFER - UN",
+        "preco": 40,
+        "estoqueMaximo": 500,
+        "estoqueMinimo": 100,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 9,
+        "descricao": "IMPRESSORA DE SK JET HP 1000J110 - UN",
+        "preco": 113.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 1,
+        "quantidadeEmEstoque": -40,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 17,
+        "descricao": "IMPRESSOR AMULTIFUNCIONAL DE SKJETHP 2050J5103X1 - UN",
+        "preco": 208.5,
+        "estoqueMaximo": null,
+        "estoqueMinimo": null,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 192,
+        "descricao": "FONE DE OUVIDO MYMAXHEADSETMIC VOLUME UNILATERAL
+PRETO - UN",
+        "preco": 17.5,
+        "estoqueMaximo": null,
+        "estoqueMinimo": null,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 67,
+        "descricao": "FONE DE OUVIDOS PORT PRETO MULTILASER - UN",
+        "preco": 14.5,
+        "estoqueMaximo": null,
+        "estoqueMinimo": null,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 11098,
+        "descricao": "MONITOR LED15 LGE1641S1366X76860HZ5MS5M: 1250 - UN",
+        "preco": 218.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 36,
+        "descricao": "CAMERA-MEMORIASD4GB MICRO/NORMAL2X1KINGSTONC4.- UN",
+        "preco": 15.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 1,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 8,
+        "descricao": "MEMORIA DESKTOP DDR1-4001GBMARKVISION - UN",
+        "preco": 75.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 1,
+        "quantidadeEmEstoque": -24,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 26,
+        "descricao": "SCANNER MESA DIGITALIZADORA BAMBOOCAPTURECTH470LWACOM - UN",
+        "preco": 449.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 1,
+        "quantidadeEmEstoque": -392,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 185,
+        "descricao": "SCANNER MESA DIGITALIZADORA MOUSE PENM5088X6USBGENIUS - UN",
+        "preco": 322.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 1,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 125,
+        "descricao": "NOTEBOOK7 TABLETKYROSMID70160.8GHZ/4GB/WIFI/USB/LCD - UN",
+        "preco": 322.5,
+        "estoqueMaximo": 1000,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 114,
+        "descricao": "NOTEBOOK14 OROI52.4GHZ/4GB/640GB/WEB/DVD/PRATA - UN",
+        "preco": 1348.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": -3,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 130,
+        "descricao": "MOUSE MINI RETRATIL PRETO USB MULTILASER - UN",
+        "preco": 13.5,
+        "estoqueMaximo": 150,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": -19,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 126,
+        "descricao": "MOUSE PRETO USB MINI RETRATIL PRETO/PRATAMYMAX - UN",
+        "preco": 14.5,
+        "estoqueMaximo": 1000,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 77,
+        "descricao": "GPS5.0 FOSTONFS-503DT+TVDIGITALBLACK - UN",
+        "preco": 189.5,
+        "estoqueMaximo": 5000,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 8319,
+        "descricao": "GPS7.0 FOSTONFS-700DT+TVDIGITALBLACKPIANO - UN",
+        "preco": 237.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 1,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 190,
+        "descricao": "LEITOR CODIGO BARRA LASER ECLIPSEMK5145USBMETROLOGIC - UN",
+        "preco": 332.5,
+        "estoqueMaximo": 1000,
+        "estoqueMinimo": 0,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 11454,
+        "descricao": "LEITOR CODIGO BARRA CCDCOMTACUSBPS900 NFE E BOLETO - UN",
+        "preco": 179.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 11455,
+        "descricao": "PLACAMODEM3GWIRELESSUSB3.5GHSUPABRANCODESBLOQUEADO-UN",
+        "preco": 99.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    },
+    {
+        "id": 11503,
+        "descricao": "PLACA MODEM 3GWIRELESSUSB3.5GHSUPA VERMELHO DESBLOQUEADO - UN",
+        "preco": 99.5,
+        "estoqueMaximo": 100,
+        "estoqueMinimo": 10,
+        "quantidadeEmEstoque": 0,
+        "valorTotalEmEstoque": 0
+    }
+]

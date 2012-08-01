@@ -74,7 +74,9 @@ function AddItemPedido(id,qtd){
 			 
 			 Items = Items + "<tr "+backgroundItem+">";
 			 Items = Items + "<td align='center'>"+field.id+"</td>";
-			 Items = Items + "<td>"+field.descricao+"</td>";			 
+			 descricao = field.descricao;
+			 descricao = descricao.toUpperCase();
+			 Items = Items + "<td>"+descricao+"</td>";			 
 			 Items = Items + "<td align='right'>"+qtd+"</td>";
 			 Items = Items + "<td align='right'>"+field.preco+"</td>";
 			 Items = Items + "<td align='right'>"+float2moeda(field.preco*qtd)+"</td>";			 
@@ -167,11 +169,13 @@ function RemovePedido(obj){
 	$(".Item").remove();
 	ListarPedidoItem();
 }
-function AddProdutoTable(id, descricao, preco){	
-	var produtoTable = "<tr class='Item'><td>"+id+"</td><td><a href='javascript:void(0);' id='Img"+id+"' onclick=ExibirImgItem(this.id);>"+descricao+" <i class='icon-camera'></i></a></td><td><input type='text' class='qtd' id='qtd"+id+"' value='1' /></td><td ><div class='precotd'>"+float2moeda(preco)+"</div></td><td><div class='btncomprartd'><button onclick='Comprar(this);' id="+id+" class='btn btn-success'><i class='icon-shopping-cart icon-white'/> Comprar</button></div></td></tr>";	
+function AddProdutoTable(id, descricao, preco){
+	descricao = descricao.toUpperCase();
+	var produtoTable = "<tr class='Item'><td>"+id+"</td><td><a href='javascript:void(0);' id='Img"+id+"' onclick=ExibirImgItem(this.id);>"+descricao+" <i class='icon-camera'></i></a></td><td><div class='precotd'><input type='text' class='qtd' id='qtd"+id+"' value='1' /></div></td><td ><div class='precotd'>"+float2moeda(preco)+"</div></td><td><div class='btncomprartd'><button onclick='Comprar(this);' id="+id+" class='btn btn-success'><i class='icon-shopping-cart icon-white'/> Comprar</button></div></td></tr>";	
 	return produtoTable;	
 }
-function AddProdutoTablePedido(id, descricao, preco, qtd){	
+function AddProdutoTablePedido(id, descricao, preco, qtd){
+	descricao = descricao.toUpperCase();
 	var produtoTable = "<tr class='Item'><td>"+id+"</td><td><a href='javascript:void(0);' id='Img"+id+"' onclick=ExibirImgItem(this.id);>"+descricao+" <i class='icon-camera'></i></a></td><td><div class='precotd'><input type='hidden' id='qtd"+id+"' value='"+qtd+"' />"+qtd+"</div></td><td ><div class='precotd'>"+float2moeda(preco)+"</div></td><td ><div class='precotd' id='VrItem"+id+"'>"+float2moeda(preco*qtd)+"</div></td><td><div class='btncomprartd'><button onclick='RemovePedido(this);' id="+id+" class='btn btn-danger'><i class='icon-trash icon-white'/></button></div></td></tr>";
 	valorPedido = $("#VrTotalPedido").html();		
 	$("#VrTotalPedido").html(float2moeda((parseFloat(preco*qtd))+parseFloat(valorPedido)));
